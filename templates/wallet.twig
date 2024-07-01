@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wallet</title>
+</head>
+<body>
+<a href="/"> << Back </a>
+<h1>WALLET</h1>
+<h2>Current balance: ${{ data.balance }}</h2>
+<ul>
+    {% for holding in data.holdings %}
+        <li>{{ holding.symbol }}: Amount {{ holding.amount }} |
+            Average Purchase Price: ${{ holding.average }} |
+            Current Price: ${{ holding.current }} |
+            Profit(%): {{ holding.profit }}%
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

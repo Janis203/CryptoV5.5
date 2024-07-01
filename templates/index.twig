@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Crypto List </title>
+</head>
+<body>
+<h1>Crypto List</h1>
+<ol>
+    {% for currency in data %}
+        <li><a href="/search/{{ currency.symbol }}">{{ currency.name }}</a> ({{ currency.symbol }})
+            :${{ currency.price }}</li>
+        <form action="/purchase/{{ currency.symbol }}" method="POST" style="display:inline;">
+            <label>
+                <input type="number" step="any" name="amount" placeholder="Amount" required>
+            </label>
+            <button type="submit">BUY</button>
+        </form>
+        <form action="/sell/{{ currency.symbol }}" method="POST" style="display:inline;">
+            <label>
+                <input type="number" step="any" name="amount" placeholder="Amount" required>
+            </label>
+            <button type="submit">SELL</button>
+        </form>
+    {% endfor %}
+</ol>
+<a href="/wallet">WALLET</a>
+<a href="/transactions">TRANSACTIONS</a>
+</body>
+</html>
