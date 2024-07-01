@@ -9,7 +9,7 @@
 <ul>
     {% for transaction in data %}
         <li>{{ transaction.type }}: {{ transaction.amount }} ({{ transaction.symbol }}) for ${{ transaction.price }}
-            at [{{ transaction.time }}]
+            at [{{ transaction.time }}] || value: ${{ transaction.value }}
         </li>
     {% endfor %}
 </ul>
